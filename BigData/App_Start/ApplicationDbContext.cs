@@ -19,13 +19,14 @@ namespace BigData
         {
             client = new MongoClient("mongodb://localhost:27017");
             database = client.GetDatabase("Coupon");
+
         }
 
         public IMongoCollection<IdentityRole> Roles { get { return database.GetCollection<IdentityRole>("Roles"); } }
 
-        public IMongoCollection<ApplicationUser> Users { get { return database.GetCollection<ApplicationUser>("Users"); } }
+        public IMongoCollection<ApplicationUser> IdentityUsers { get { return database.GetCollection<ApplicationUser>("Users"); } }
 
-
+        public IMongoCollection<User> Users { get { return database.GetCollection<User>("Users"); } }
 
         public Task<List<IdentityRole>> AllRolesAsync()
         {
@@ -33,6 +34,9 @@ namespace BigData
         }
 
         public IMongoCollection<Coupon> Coupons { get { return database.GetCollection<Coupon>("Coupons"); } }
+
+
+        public IMongoCollection<CouponType> CouponTypes { get { return database.GetCollection<CouponType>("CouponType"); } }
 
         public void Dispose()
         {

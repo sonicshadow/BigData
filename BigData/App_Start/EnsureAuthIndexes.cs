@@ -9,7 +9,7 @@ namespace BigData
         public static void Exist()
         {
             var context = new ApplicationDbContext();
-            IndexChecks.EnsureUniqueIndexOnUserName(context.Users);
+            IndexChecks.EnsureUniqueIndexOnUserName(context.IdentityUsers);
             IndexChecks.EnsureUniqueIndexOnRoleName(context.Roles);
         }
     }

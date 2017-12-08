@@ -1,5 +1,7 @@
 ﻿using AspNet.Identity.MongoDB;
 using Microsoft.AspNet.Identity;
+using MongoDB.Bson;
+using MongoDB.Bson.Serialization.Attributes;
 using System.Security.Claims;
 using System.Threading.Tasks;
 
@@ -17,4 +19,17 @@ namespace BigData.Models
         }
     }
 
+    [BsonIgnoreExtraElements]
+    public class User
+    {
+        public ObjectId Id { get; set; }
+
+        public string UserName { get; set; }
+
+        public string Email { get; set; }
+
+
+        public string PhoneNumber { get; set; }
+        
+    }
 }

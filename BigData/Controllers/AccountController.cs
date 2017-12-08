@@ -132,6 +132,30 @@ namespace BigData.Controllers
             return View(model);
         }
 
+
+        //public async Task<ActionResult> Test()
+        //{
+        //    int success = 0;
+        //    for (int i = 0; i < 10; i++)
+        //    {
+        //        var user = new ApplicationUser { UserName = $"test_{i}@126.com", Email = $"test_{i}@126.com" };
+        //        var result = await UserManager.CreateAsync(user, "123456");
+        //        if (result.Succeeded)
+        //        {
+        //            success++;
+        //            //await SignInHelper.SignInAsync(user, isPersistent: false, rememberBrowser: false);
+        //            // 有关如何启用帐户确认和密码重置的详细信息，请访问 http://go.microsoft.com/fwlink/?LinkID=320771
+        //            // 发送包含此链接的电子邮件
+        //            // string code = await UserManager.GenerateEmailConfirmationTokenAsync(user.Id);
+        //            // var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
+        //            // await UserManager.SendEmailAsync(user.Id, "确认你的帐户", "请通过单击 <a href=\"" + callbackUrl + "\">這裏</a>来确认你的帐户");
+
+
+        //        }
+        //    }
+        //    return Json(success.ToString(), JsonRequestBehavior.AllowGet);
+        //}
+
         //
         // GET: /Account/ConfirmEmail
         [AllowAnonymous]
@@ -231,7 +255,7 @@ namespace BigData.Controllers
             return View();
         }
 
-      
+
 
         //
         // POST: /Account/LogOff
